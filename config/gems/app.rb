@@ -1,4 +1,5 @@
 gem "bcrypt"
+gem "rails_mvp_authentication"
 
 group :development, :test do
   gem "standard", "~> 1.9", require: false
@@ -16,6 +17,7 @@ group :development do
   gem "rubocop"
   gem "rubocop-rails", require: false
   gem "rubocop-rspec"
+  gem "letter_opener"
 end
 
 group :test do

@@ -1,0 +1,55 @@
+<%= form_with model: @user, url: account_path, method: :put do |form| %>
+  <% if form.object.errors.any? %>
+    <ul>
+      <% form.object.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  <% end %>
+  <div>
+    <%= form.label :email, "Current Email" %>
+    <%= form.email_field :email, disabled: true %>
+  </div>
+  <div>
+    <%= form.label :unconfirmed_email, "New Email" %>
+    <%= form.text_field :unconfirmed_email %>
+  </div>
+  <div>
+    <%= form.label :password, "Password (leave blank if you don't want to change it)" %>
+    <%= form.password_field :password %>
+  </div>
+  <div>
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation %>
+  </div>
+  <hr/>
+  <div>
+    <%= form.label :current_password, "Current password (we need your current password to confirm your changes)" %>
+    <%= form.password_field :current_password, required: true %>
+  </div>
+  <%= form.submit "Update Account" %>
+<% end %>
+<h2>Current Logins</h2>
+<% if @active_sessions.any? %> 
+  <%= button_to "Log out of all other sessions", destroy_all_active_sessions_path, method: :delete %>
+  <table>
+    <thead>
+      <tr>
+        <th>User Agent</th>
+        <th>IP Address</th>
+        <th>Signed In At</th>
+        <th>Sign Out</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @active_sessions.each do |active_session| %>
+        <tr>
+          <td><%= active_session.user_agent %></td>
+          <td><%= active_session.ip_address %></td>
+          <td><%= active_session.created_at %></td>
+          <td><%= button_to "Sign Out", active_session_path(active_session), method: :delete %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
