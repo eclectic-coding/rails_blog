@@ -31,3 +31,13 @@
 
 en:
   hello: "Hello world"
+  sessions:
+    new:
+      title: ""
+      sign_in: ""
+    create:
+      unconfirmed: ""
+      sign_up: ""
+      incorrect_flash: ""
+    destroy:
+      sign_out: ""

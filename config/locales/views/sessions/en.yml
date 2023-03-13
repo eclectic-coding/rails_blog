@@ -1,0 +1,12 @@
+en:
+  hello: "Hello world"
+  sessions:
+    new:
+      title: Create Account
+      sign_in: Sign In
+    create:
+      unconfirmed: Incorrect email or password.
+      sign_up: Signed in.
+      incorrect_flash: Incorrect email or password.
+    destroy:
+      sign_out: Signed out.
