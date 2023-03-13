@@ -130,6 +130,10 @@ GEM
       railties (>= 6.0.0)
     json (2.6.3)
     language_server-protocol (3.17.0.3)
+    launchy (2.5.2)
+      addressable (~> 2.8)
+    letter_opener (1.8.1)
+      launchy (>= 2.2, < 3)
     listen (3.8.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
@@ -197,6 +201,8 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.5.0)
       loofah (~> 2.19, >= 2.19.1)
+    rails_mvp_authentication (1.0.0)
+      rails (>= 7.0.0)
     railties (7.0.4.2)
       actionpack (= 7.0.4.2)
       activesupport (= 7.0.4.2)
@@ -325,9 +331,11 @@ DEPENDENCIES
   guard-rspec
   jbuilder
   jsbundling-rails
+  letter_opener
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.4, >= 7.0.4.2)
+  rails_mvp_authentication
   redis (~> 4.0)
   rspec-rails (~> 6.0.0)
   rubocop
