@@ -1,30 +1,13 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :destroy, :update]
-  before_action :redirect_if_authenticated, only: [:create, :new]
 
-  def create
-    @user = User.new(create_user_params)
-    if @user.save
-      @user.send_confirmation_email!
-      redirect_to root_path, notice: "Please check your email for confirmation instructions."
-    else
-      render :new, status: :unprocessable_entity
-    end
-  end
-
-  def destroy
-    current_user.destroy
-    reset_session
-    redirect_to root_path, notice: "Your account has been deleted."
+  def new
+    @user = User.new
   end
 
   def edit
     @user = current_user
     @active_sessions = @user.active_sessions.order(created_at: :desc)
-  end
-
-  def new
-    @user = User.new
   end
 
   def update
@@ -47,11 +30,13 @@ class UsersController < ApplicationController
     end
   end
 
-  private
-
-  def create_user_params
-    params.require(:user).permit(:email, :password, :password_confirmation)
+  def destroy
+    current_user.destroy
+    reset_session
+    redirect_to root_path, notice: "Your account has been deleted."
   end
+
+  private
 
   def update_user_params
     params.require(:user).permit(:current_password, :password, :password_confirmation, :unconfirmed_email)

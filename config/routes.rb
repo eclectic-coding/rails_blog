@@ -1,7 +1,4 @@
 Rails.application.routes.draw do
-  # Users
-  # post "register", to: "users#create"
-  # get "register", to: "users#new"
   put "account", to: "users#update"
   get "account", to: "users#edit"
   delete "account", to: "users#destroy"
