@@ -1,22 +1,27 @@
-<%= form_with model: @user, url: sign_up_path do |form| %>
-  <% if form.object.errors.any? %>
-    <ul>
-      <% form.object.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+<div class="row mt-5">
+  <div class="col-6 mx-auto">
+    <div class="card-p-3">
+      <h2>Create Account</h2>
+      <%= form_with model: @user, url: register_path do |form| %>
+        <%= render partial: "shared/form_errors", locals: { object: form.object } %>
+
+        <div class="mb-3">
+          <%= form.label :email, class: "form-label" %>
+          <%= form.email_field :email, required: true, class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+          <%= form.label :password, class: "form-label" %>
+          <%= form.password_field :password, required: true, class: "form-control" %>
+        </div>
+
+        <div class="mb-3">
+          <%= form.label :password_confirmation, class: "form-label" %>
+          <%= form.password_field :password_confirmation, required: true, class: "form-control" %>
+        </div>
+
+        <%= form.submit "Sign Up", class: "btn btn-primary" %>
       <% end %>
-    </ul>
-  <% end %>
-  <div>
-    <%= form.label :email %>
-    <%= form.email_field :email, required: true %>
+    </div>
   </div>
-  <div>
-    <%= form.label :password %>
-    <%= form.password_field :password, required: true %>
-  </div>
-  <div>
-    <%= form.label :password_confirmation %>
-    <%= form.password_field :password_confirmation, required: true %>
-  </div>
-  <%= form.submit "Sign Up" %>
-<% end %>
+</div>
