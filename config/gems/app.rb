@@ -1,5 +1,6 @@
 gem "bcrypt"
 gem "rails_mvp_authentication"
+gem 'aws-sdk-s3'
 
 group :development, :test do
   gem "standard", "~> 1.9", require: false
