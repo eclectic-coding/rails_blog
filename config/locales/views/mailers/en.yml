@@ -1,0 +1,9 @@
+en:
+  user_mailer:
+    confirmation:
+      instructions: "Confirmation Instructions"
+    password_reset:
+      reset_instructions: "Password Reset Instructions"
+
+
+

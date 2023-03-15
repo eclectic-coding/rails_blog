@@ -17,15 +17,15 @@ class UsersController < ApplicationController
       if @user.update(update_user_params)
         if params[:user][:unconfirmed_email].present?
           @user.send_confirmation_email!
-          redirect_to root_path, notice: "Check your email for confirmation instructions."
+          redirect_to root_path, notice: t(".instructions")
         else
-          redirect_to root_path, notice: "Account updated."
+          redirect_to root_path, notice: t(".updated")
         end
       else
         render :edit, status: :unprocessable_entity
       end
     else
-      flash.now[:error] = "Incorrect password"
+      flash.now[:error] = t(".invalid_password")
       render :edit, status: :unprocessable_entity
     end
   end
@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   def destroy
     current_user.destroy
     reset_session
-    redirect_to root_path, notice: "Your account has been deleted."
+    redirect_to root_path, notice: t(".deleted")
   end
 
   private

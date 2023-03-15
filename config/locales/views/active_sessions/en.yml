@@ -1,0 +1,10 @@
+en:
+  active_sessions:
+    destroy:
+      session_deleted: "Session deleted."
+      signed_out: "Signed out."
+    destroy_all:
+      signed_out: "Signed out."
+
+
+

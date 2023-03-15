@@ -6,21 +6,21 @@ class PasswordsController < ApplicationController
     if @user.present?
       if @user.confirmed?
         @user.send_password_reset_email!
-        redirect_to root_path, notice: "If that user exists we've sent instructions to their email."
+        redirect_to root_path, notice: t(".notice")
       else
-        redirect_to new_confirmation_path, alert: "Please confirm your email first."
+        redirect_to new_confirmation_path, alert: t(".confirm_email")
       end
     else
-      redirect_to root_path, notice: "If that user exists we've sent instructions to their email."
+      redirect_to root_path, notice: t(".instructions")
     end
   end
 
   def edit
     @user = User.find_signed(params[:password_reset_token], purpose: :reset_password)
     if @user.present? && @user.unconfirmed?
-      redirect_to new_confirmation_path, alert: "You must confirm your email before you can sign in."
+      redirect_to new_confirmation_path, alert: t(".confirm_email")
     elsif @user.nil?
-      redirect_to new_password_path, alert: "Invalid or expired token."
+      redirect_to new_password_path, alert: t(".invalid_token")
     end
   end
 
@@ -31,15 +31,15 @@ class PasswordsController < ApplicationController
     @user = User.find_signed(params[:password_reset_token], purpose: :reset_password)
     if @user
       if @user.unconfirmed?
-        redirect_to new_confirmation_path, alert: "You must confirm your email before you can sign in."
+        redirect_to new_confirmation_path, alert: t(".confirm_email")
       elsif @user.update(password_params)
-        redirect_to login_path, notice: "Sign in."
+        redirect_to login_path, notice: t(".sign_in")
       else
         flash.now[:alert] = @user.errors.full_messages.to_sentence
         render :edit, status: :unprocessable_entity
       end
     else
-      flash.now[:alert] = "Invalid or expired token."
+      flash.now[:alert] = t(".invalid_token")
       render :new, status: :unprocessable_entity
     end
   end

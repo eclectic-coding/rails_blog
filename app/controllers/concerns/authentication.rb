@@ -9,7 +9,7 @@ module Authentication
 
   def authenticate_user!
     store_location
-    redirect_to login_path, alert: "You need to login to access that page." unless user_signed_in?
+    redirect_to login_path, alert: t(".need_login") unless user_signed_in?
   end
 
   def login(user)
@@ -31,7 +31,7 @@ module Authentication
   end
 
   def redirect_if_authenticated
-    redirect_to root_path, alert: "You are already logged in." if user_signed_in?
+    redirect_to root_path, alert: t(".already_logged_in") if user_signed_in?
   end
 
   def remember(active_session)

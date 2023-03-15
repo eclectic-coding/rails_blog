@@ -30,6 +30,7 @@ class User < ApplicationRecord
     end
   end
 
+  # disable:rubocop:Rails/SkipsModelValidations
   def confirm!
     if unconfirmed_or_reconfirming?
       if unconfirmed_email.present?
@@ -40,17 +41,14 @@ class User < ApplicationRecord
       false
     end
   end
+  # enable:rubocop:Rails/SkipsModelValidations
 
   def confirmed?
     confirmed_at.present?
   end
 
   def confirmable_email
-    if unconfirmed_email.present?
-      unconfirmed_email
-    else
-      email
-    end
+    (unconfirmed_email.presence || email)
   end
 
   def generate_confirmation_token

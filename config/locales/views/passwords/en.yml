@@ -1,0 +1,15 @@
+en:
+  passwords:
+    create:
+      notice: "If that user exists we've sent instructions to their email."
+      confirm_email: "Please confirm your email first."
+      instructions: "If that user exists we've sent instructions to their email."
+    edit:
+      confirm_email: "You must confirm your email before you can sign in."
+      invalid_token: "Invalid or expired token."
+    update:
+      confirm_email: "You must confirm your email before you can sign in."
+      sign_in: "Sign in."
+      invalid_token: "Invalid or expired token."
+
+

@@ -1,0 +1,12 @@
+en:
+  users:
+    update:
+      instructions: "Check your email for confirmation instructions."
+      updated: "Account updated."
+      invalid_password: "Incorrect password"
+    destroy:
+      deleted: "Your account has been deleted."
+
+
+
+

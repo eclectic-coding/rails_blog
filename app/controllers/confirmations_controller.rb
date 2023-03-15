@@ -6,9 +6,9 @@ class ConfirmationsController < ApplicationController
 
     if @user.present? && @user.unconfirmed?
       @user.send_confirmation_email!
-      redirect_to root_path, notice: "Check your email for confirmation instructions."
+      redirect_to root_path, notice: t(".confirmation_sent")
     else
-      redirect_to new_confirmation_path, alert: "We could not find a user with that email or that email has already been confirmed."
+      redirect_to new_confirmation_path, alert: t(".invalid_email")
     end
   end
 
@@ -17,12 +17,12 @@ class ConfirmationsController < ApplicationController
     if @user.present? && @user.unconfirmed_or_reconfirming?
       if @user.confirm!
         login @user
-        redirect_to root_path, notice: "Your account has been confirmed."
+        redirect_to root_path, notice: t(".confirmed")
       else
-        redirect_to new_confirmation_path, alert: "Something went wrong."
+        redirect_to new_confirmation_path, alert: t(".wrong_token")
       end
     else
-      redirect_to new_confirmation_path, alert: "Invalid token."
+      redirect_to new_confirmation_path, alert: t(".invalid_token")
     end
   end
 
