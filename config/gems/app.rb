@@ -19,6 +19,7 @@ group :development do
   gem "rubocop-rails", require: false
   gem "rubocop-rspec"
   gem "letter_opener"
+  gem "bullet"
 end
 
 group :test do

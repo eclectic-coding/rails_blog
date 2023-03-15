@@ -196,3 +196,6 @@ Rails/Validation:
   Enabled: true
   Include:
     - app/models/**/*.rb
+
+Rails/SkipsModelValidations:
+  Enabled: false
