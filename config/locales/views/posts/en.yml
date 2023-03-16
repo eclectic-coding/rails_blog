@@ -1,0 +1,13 @@
+en:
+  posts:
+    destroy:
+      destroyed: Post was successfully destroyed.
+    update:
+      updated_successfully: "Post was successfully created."
+    create:
+      created_successfully: "Post was successfully created."
+
+
+
+
+

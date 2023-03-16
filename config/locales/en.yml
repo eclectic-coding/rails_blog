@@ -80,3 +80,10 @@ en:
       instructions: ""
     password_reset:
       reset_instructions: ""
+  posts:
+    destroy:
+      destroyed: ""
+    update:
+      updated_successfully: ""
+    create:
+      created_successfully: ""

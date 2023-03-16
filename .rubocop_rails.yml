@@ -199,3 +199,6 @@ Rails/Validation:
 
 Rails/SkipsModelValidations:
   Enabled: false
+
+Layout/SpaceInsideHashLiteralBraces:
+  Enabled: false
