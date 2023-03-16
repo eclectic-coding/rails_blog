@@ -7,7 +7,7 @@ require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
   config.action_mailer.default_url_options = {host: "example.com"}
-  config.action_mailer.default_url_options = { host: 'example.com' }
+  config.action_mailer.default_url_options = { host: "example.com" }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Turn false under Spring and add config.action_view.cache_template_loading = true.
@@ -25,7 +25,7 @@ Rails.application.configure do
   }
 
   # Show full error reports and disable caching.
-  config.consider_all_requests_local       = true
+  config.consider_all_requests_local = true
   config.action_controller.perform_caching = false
   config.cache_store = :null_store
 

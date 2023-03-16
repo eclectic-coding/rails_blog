@@ -15,6 +15,6 @@ Rails.application.routes.draw do
       delete "destroy_all"
     end
   end
-          
-  root to: 'posts#index'
+
+  root to: "posts#index"
 end

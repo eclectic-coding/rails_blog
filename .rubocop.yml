@@ -19,7 +19,6 @@ AllCops:
   TargetRubyVersion: 3.0.0
   Exclude:
     - bin/**/*
-    - config/**/*
     - db/schema.rb
     - db/migrate/*.rb
     - node_modules/**/*
