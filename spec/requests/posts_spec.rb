@@ -1,7 +1,7 @@
 require "rails_helper"
 
 RSpec.describe "/posts", type: :request do
-  let(:valid_attributes) { { title: "MyString", content: "MyText" }}
+  let(:valid_attributes) { { title: "MyString", content: "MyText" } }
 
   let(:invalid_attributes) { { title: "", content: "" } }
 
@@ -42,7 +42,7 @@ RSpec.describe "/posts", type: :request do
     before do
       login create(:user)
     end
-    
+
     context "with valid parameters" do
       it "creates a new Post" do
         expect {

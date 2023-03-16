@@ -87,3 +87,7 @@ en:
       updated_successfully: ""
     create:
       created_successfully: ""
+    show:
+      edit_btn: ""
+      all_posts: ""
+  edit_btn: ""

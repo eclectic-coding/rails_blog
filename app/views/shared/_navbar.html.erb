@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light">
   <div class="container">
-    <%= link_to "Testapp", root_path, class: "navbar-brand" %>
+    <%= link_to "Eclectic Coding", root_path, class: "navbar-brand" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -9,8 +9,6 @@
         <% if user_signed_in? %>
           <li class="nav-item me-3"><%= link_to "Dashboard", account_path, class: "btn btn-outline-success" %></li>
           <li class="nav-item"><%= button_to "Logout", logout_path, class: "nav-link border-0 bg-transparent", method: :delete %></li>
-        <% else %>
-          <li class="nav-item"><%= link_to "Login", login_path, class: "nav-link" %></li>
         <% end %>
       </ul>
     </div>
