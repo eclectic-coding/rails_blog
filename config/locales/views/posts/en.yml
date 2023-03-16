@@ -3,9 +3,11 @@ en:
     destroy:
       destroyed: Post was successfully destroyed.
     update:
-      updated_successfully: "Post was successfully created."
+      updated_successfully: Post was successfully created.
     create:
-      created_successfully: "Post was successfully created."
+      created_successfully: Post was successfully created.
+    new:
+      need_login: You must be logged in to create a post.
 
 
 

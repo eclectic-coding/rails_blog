@@ -19,7 +19,14 @@ export default class extends Controller {
         });
 
         editor.getMarkdown();
-        console.log(editor.getMarkdown());
+
+        // create hidden field for post content
+        // const input = document.createElement('input');
+        // input.setAttribute('type', 'hidden');
+        // input.setAttribute('id', 'content');
+        // input.setAttribute('name', 'post[content]');
+        // input.setAttribute('value', '');
+        // this.element.parentNode.insertBefore(input, this.element.nextSibling);
 
         // copy changes in editor to hidden field
         editor.on('change', () => {

@@ -2,7 +2,7 @@ en:
   hello: "Hello world"
   sessions:
     new:
-      title: Create Account
+      title: Login
       sign_in: Sign In
     create:
       unconfirmed: Incorrect email or password.
