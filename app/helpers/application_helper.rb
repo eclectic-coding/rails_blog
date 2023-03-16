@@ -8,3 +8,4 @@ module ApplicationHelper
     }.stringify_keys[flash_type.to_s] || flash_type.to_s
   end
 end
+

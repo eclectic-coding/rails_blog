@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :posts
+
+  # user account stuff
   put "account", to: "users#update"
   get "account", to: "users#edit"
   delete "account", to: "users#destroy"
@@ -13,7 +16,5 @@ Rails.application.routes.draw do
     end
   end
           
-  root to: 'static#home'
-  get 'static/home'
-
+  root to: 'posts#index'
 end
