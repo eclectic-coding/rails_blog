@@ -352,6 +352,7 @@ DEPENDENCIES
   bootsnap
   bullet
   capybara
+  coderay
   cssbundling-rails
   debug
   factory_bot_rails

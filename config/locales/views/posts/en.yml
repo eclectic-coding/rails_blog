@@ -3,7 +3,7 @@ en:
     destroy:
       destroyed: Post was successfully destroyed.
     update:
-      updated_successfully: Post was successfully created.
+      updated_successfully: Post was updated successfully.
     create:
       created_successfully: Post was successfully created.
     new:

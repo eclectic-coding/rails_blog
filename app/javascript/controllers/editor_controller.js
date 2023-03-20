@@ -1,5 +1,6 @@
 import { Controller } from "@hotwired/stimulus";
 import Editor from '@toast-ui/editor';
+import codeSyntaxHighlightPlugin from "@toast-ui/editor-plugin-code-syntax-highlight"
 
 export default class extends Controller {
     static values = {
@@ -15,23 +16,16 @@ export default class extends Controller {
             initialEditType: 'markdown',
             initialValue: initValue,
             previewStyle: 'vertical',
+            plugins: [codeSyntaxHighlightPlugin],
             events: {}
         });
 
         editor.getMarkdown();
 
-        // create hidden field for post content
-        // const input = document.createElement('input');
-        // input.setAttribute('type', 'hidden');
-        // input.setAttribute('id', 'content');
-        // input.setAttribute('name', 'post[content]');
-        // input.setAttribute('value', '');
-        // this.element.parentNode.insertBefore(input, this.element.nextSibling);
-
         // copy changes in editor to hidden field
         editor.on('change', () => {
             document.getElementById('content-input')
-                .setAttribute('value', editor.getMarkdown().replace(/(?:\r\n|\r|\n)/g, '\\k'));
+                .setAttribute('value', editor.getHTML());
         });
     }
 }
