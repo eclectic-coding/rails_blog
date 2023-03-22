@@ -1,6 +1,5 @@
 import { Controller } from "@hotwired/stimulus";
 import Editor from '@toast-ui/editor';
-import codeSyntaxHighlightPlugin from "@toast-ui/editor-plugin-code-syntax-highlight"
 
 export default class extends Controller {
     static values = {
@@ -16,7 +15,6 @@ export default class extends Controller {
             initialEditType: 'markdown',
             initialValue: initValue,
             previewStyle: 'vertical',
-            plugins: [codeSyntaxHighlightPlugin],
             events: {}
         });
 
@@ -25,7 +23,7 @@ export default class extends Controller {
         // copy changes in editor to hidden field
         editor.on('change', () => {
             document.getElementById('content-input')
-                .setAttribute('value', editor.getHTML());
+                .setAttribute('value', editor.getMarkdown());
         });
     }
 }
