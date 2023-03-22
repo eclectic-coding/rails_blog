@@ -10,10 +10,41 @@
       </ul>
     </div>
   <% end %>
+  <div class="row">
+    <div class="col-6">
+      <div class="mb-3">
+        <%= form.label :title, class: 'form-label' %>
+        <%= form.text_field :title, class: 'form-control' %>
+      </div>
 
-  <div class="mb-3">
-    <%= form.label :title, class: 'form-label' %>
-    <%= form.text_field :title, class: 'form-control' %>
+      <div class="row">
+        <div class="col-6 mb-3">
+          <%= form.label :published_at, "Published Date", class: 'form-label' %>
+          <%= form.text_field :published_at,
+                              data: { controller: "flatpickr" },
+                              class: 'flatpickr form-control' %>
+        </div>
+
+        <div class="col-6 mb-3">
+          <%= form.label :is_published, "Status", class: 'form-label' %>
+          <%= form.select :is_published,
+                          options_for_select([['Published', true], ['Draft', false]], { selected: post.is_published }),
+                          {}, { class: 'form-select' } %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-6">
+      <div class="mb-3">
+        <%= form.label :series, "Article Series", class: 'form-label' %>
+        <%= form.text_field :series, class: 'form-control' %>
+      </div>
+
+      <div class="mb-3">
+        <%= form.label :description, class: 'form-label' %>
+        <%= form.text_area :description, class: 'form-control' %>
+      </div>
+    </div>
   </div>
 
   <div id="editor" class="my-3" data-controller="editor"></div>
