@@ -49,6 +49,7 @@
 
   <div id="editor" class="my-3" data-controller="editor"></div>
   <%= form.hidden_field :content, value: post.content, id: 'content-input' %>
+  <%= form.hidden_field :user_id, value: current_user.id %>
 
   <div class="mb-3">
     <% if post.persisted? %>

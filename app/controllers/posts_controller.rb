@@ -4,7 +4,7 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.published.order(published_at: :desc).all
   end
 
   # GET /posts/1 or /posts/1.json
@@ -65,6 +65,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :content, :published_at, :series, :description, :is_published)
+    params.require(:post).permit(:title, :content, :published_at, :series, :description, :is_published, :user_id)
   end
 end

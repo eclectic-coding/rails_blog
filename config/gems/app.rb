@@ -22,6 +22,7 @@ group :development do
   gem "rubocop-rspec"
   gem "letter_opener"
   gem "bullet"
+  gem "strong_migrations"
 end
 
 group :test do

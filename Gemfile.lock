@@ -317,6 +317,8 @@ GEM
       rubocop-performance (= 1.15.2)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
+    strong_migrations (1.4.4)
+      activerecord (>= 5.2)
     thor (1.2.1)
     timeout (0.3.2)
     turbo-rails (1.4.0)
@@ -379,6 +381,7 @@ DEPENDENCIES
   sprockets-rails
   standard (~> 1.9)
   stimulus-rails
+  strong_migrations
   turbo-rails
   tzinfo-data
   web-console

@@ -1,7 +1,9 @@
 require "rails_helper"
 
 RSpec.describe "/posts", type: :request do
-  let(:valid_attributes) { { title: "MyString", content: "MyText" } }
+  let(:valid_attributes) {
+    { title: "MyString", content: "MyText", user_id: create(:user).id }
+  }
 
   let(:invalid_attributes) { { title: "", content: "" } }
 
