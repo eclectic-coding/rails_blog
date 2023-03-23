@@ -6,3 +6,23 @@
   margin: 1rem 2rem;
   border-radius: 0.3rem;
 }
+
+.nav-pills {
+  & .nav-item {
+    margin: 0.13rem 0;
+    width: 100%;
+  }
+
+  & .nav-link {
+    &:hover {
+      color: inherit;
+      background: rgba(white, 0.05);
+      width: 100%;
+    }
+
+    &.sidebar__active {
+      color: inherit;
+      background: rgba(white, 0.1);
+    }
+  }
+}
