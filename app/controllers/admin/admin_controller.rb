@@ -3,6 +3,9 @@ class Admin::AdminController < ApplicationController
 
   layout "admin"
 
+  verify_authorized
+
   def index
+    authorize!
   end
 end
