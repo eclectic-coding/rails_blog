@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!, only: [:edit, :destroy, :update]
+  layout "admin", only: [:edit]
 
   def new
     @user = User.new
