@@ -5,16 +5,8 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 require "rspec/rails"
 require "capybara/rails"
 require "fuubar"
-require "simplecov"
+require "webmock/rspec"
 
-SimpleCov.start do
-  add_filter "/spec/"
-  add_filter "/config/"
-  add_filter "/vendor/"
-  add_filter "/db/"
-  add_filter "/bin/"
-  add_filter "/lib/tasks/"
-end
 
 Dir[Rails.root.join("spec", "support", "**", "*.rb")].sort.each { |f| require f }
 
@@ -25,7 +17,12 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 
+WebMock.disable_net_connect!(allow_localhost: true)
+
 RSpec.configure do |config|
+  config.before(:each) do
+    stub_request(:get, /secure.gravatar.com/).to_return(status: 200, body: "", headers: {})
+  end
   config.include FactoryBot::Syntax::Methods
   config.include Rails.application.routes.url_helpers, type: :request
   config.include Helpers::Authentication, type: :request

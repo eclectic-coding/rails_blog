@@ -1,3 +1,14 @@
+require "simplecov"
+
+SimpleCov.start do
+  add_filter "/spec/"
+  add_filter "/config/"
+  add_filter "/vendor/"
+  add_filter "/db/"
+  add_filter "/bin/"
+  add_filter "/lib/tasks/"
+end
+
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   config.expect_with :rspec do |expectations|
