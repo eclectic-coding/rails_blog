@@ -2,12 +2,6 @@
   <div class="col-md-8 mx-auto">
     <div class="d-flex justify-content-between align-items-center mb-3">
       <h1>Posts</h1>
-
-      <%= tag.div class: "col-sm-6 text-end" do %>
-        <%= link_to new_post_path, class: 'btn btn-primary' do %>
-          Add New Post
-        <% end %>
-      <% end if user_signed_in? %>
     </div>
 
     <div class="">

@@ -4,5 +4,7 @@ class Admin::AdminController < ApplicationController
   layout "admin"
 
   def index
+    @user = current_user if current_user.admin?
+    authorize @user
   end
 end
