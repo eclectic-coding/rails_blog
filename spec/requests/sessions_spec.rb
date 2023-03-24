@@ -13,14 +13,14 @@ RSpec.describe "Sessions", type: :request do
       user = create(:user)
       login user
 
-      expect(response).to redirect_to(root_path)
+      expect(response).to redirect_to(admin_root_path)
     end
 
     it "logins and create active session if confirmed" do
       user = create(:user)
       login user
 
-      expect(response).to redirect_to(root_path)
+      expect(response).to redirect_to(admin_root_path)
       expect(current_user).to eq(user)
     end
   end

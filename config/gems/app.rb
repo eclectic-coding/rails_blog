@@ -23,7 +23,6 @@ group :development do
   gem "letter_opener"
   gem "bullet"
   gem "strong_migrations"
-  gem "action_policy"
 end
 
 group :test do
