@@ -5,10 +5,10 @@ module MarkdownHelper
     include Rouge::Plugins::Redcarpet
   end
 
-  def convert_markdown(input)
+  def convert_markdown!(input)
     options = {
       filter_html: true,
-      hard_wrap: true,
+      hard_wrap: true
     }
 
     extensions = { strikethrough: true,
@@ -24,7 +24,8 @@ module MarkdownHelper
 
     renderer = HTML.new(options)
     markdown = Redcarpet::Markdown.new(renderer, extensions)
+    # rubocop:disable Rails/OutputSafety
     markdown.render(input).html_safe
+    # rubocop:enable Rails/OutputSafety
   end
-
 end

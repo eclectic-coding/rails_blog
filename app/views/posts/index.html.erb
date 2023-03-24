@@ -14,7 +14,7 @@
           </h2>
           <small>Published: <%= post.published_at || post.created_at %></small><br/>
           <small>Status: <%= post.is_published %></small>
-          <div><%= convert_markdown(post.content) %></div>
+          <div><%= sanitize convert_markdown!(post.content) %></div>
 
           <%= tag.div class: "col-sm-6 text-end" do %>
             <%= link_to t("edit_btn"), edit_post_path(post) %>

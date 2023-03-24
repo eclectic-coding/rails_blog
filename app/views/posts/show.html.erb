@@ -1,7 +1,7 @@
 <div class="col-8 mx-auto">
 
   <h2><%= @post.title %></h2>
-  <div><%= convert_markdown @post.content %></div>
+  <div><%= sanitize convert_markdown! @post.content %></div>
   <% if user_signed_in? %>
     <%= link_to "Edit", edit_post_path(@post) %>
   <% end %>
